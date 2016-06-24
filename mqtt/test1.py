@@ -2,9 +2,9 @@ import paho.mqtt.client as mqtt
 
 def on_connect(client, userdata, flags, rc):
 	print("Connected with result code: "+str(rc))
-	client.suscribe("natimqtt")
+	client.subscribe("natimqtt")
 
-def on_menssage(client, userdata, msg):
+def on_message(client, userdata, msg):
 	print(msg.topic+" "+str(msg.payload))
 
 client = mqtt.Client()
